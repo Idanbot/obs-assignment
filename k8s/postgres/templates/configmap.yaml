@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: init-sql-configmap
+data:
+  01_cities.sql: |
+    -- Your cities table creation script
+    CREATE TABLE cities (
+    id SERIAL PRIMARY KEY,
+    city_name VARCHAR(100) NOT NULL UNIQUE,
+    latitude FLOAT NOT NULL,
+    longitude FLOAT NOT NULL
+    );
+  02_weather_data.sql: |
+    -- Your weather data table creation script
+    CREATE TABLE weather_data (
+    id SERIAL PRIMARY KEY,
+    city_id INT NOT NULL,
+    date DATE NOT NULL,
+    weather_data JSONB NOT NULL,
+    CONSTRAINT fk_city FOREIGN KEY (city_id) REFERENCES cities(id) ON DELETE CASCADE
+    );

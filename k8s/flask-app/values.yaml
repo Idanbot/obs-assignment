@@ -1,0 +1,20 @@
+replicaCount: 1
+
+image:
+  repository: flask-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 8080
+
+env:
+  DB_HOST: postgres
+  DB_USER: postgres
+  DB_PASSWORD: postgres
+  DB_NAME: weatherdb
+
+ingress:
+  enabled: true
+  host: flask-app.local
