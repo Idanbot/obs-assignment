@@ -3,3 +3,6 @@
 # Docker
 docker build -t weather-service .
 docker run -p 8080:8080 weather-service
+
+docker-compose up --build
+docker-compose down -v
