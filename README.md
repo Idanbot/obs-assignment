@@ -18,3 +18,6 @@ docker run -p 8080:8080 weather-service
 docker-compose up --build
 docker-compose down -v
 ```
+
+docker build -t idanacr.azurecr.io/flask-app:latest .
+docker push idanacr.azurecr.io/flask-app:latest
