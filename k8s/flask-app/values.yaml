@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: flask-app
+  repository: idanacr.azurecr.io/flask-app
   tag: latest
   pullPolicy: IfNotPresent
 
